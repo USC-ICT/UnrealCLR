@@ -70,7 +70,7 @@
 #include "GameFramework/RotatingMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
-#include "IAssetRegistry.h"
+#include "AssetRegistry/IAssetRegistry.h"
 #include "ImageUtils.h"
 #include "Materials/MaterialInstanceDynamic.h"
 #include "Misc/DefaultValueHelper.h"
@@ -81,8 +81,6 @@
 #include "Sound/AmbientSound.h"
 #include "UnrealEngine.h"
 
-#include "UnrealCLRFramework.h"
-#include "UnrealCLRLibrary.h"
 #include "UnrealCLRManager.h"
 
 #if WITH_EDITOR

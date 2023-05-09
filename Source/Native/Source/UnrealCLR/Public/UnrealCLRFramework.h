@@ -23,6 +23,24 @@
 
 #pragma once
 
+#include "AIController.h"
+#include "MotionControllerComponent.h"
+#include "AssetRegistry/IAssetRegistry.h"
+#include "Camera/CameraComponent.h"
+#include "Camera/PlayerCameraManager.h"
+#include "Components/AudioComponent.h"
+#include "Components/BoxComponent.h"
+#include "Components/PostProcessComponent.h"
+#include "Components/SphereComponent.h"
+#include "Components/SplineComponent.h"
+#include "Components/TextRenderComponent.h"
+#include "Engine/PostProcessVolume.h"
+#include "GameFramework/MovementComponent.h"
+#include "GameFramework/PlayerInput.h"
+#include "GameFramework/RotatingMovementComponent.h"
+#include "GameFramework/SpringArmComponent.h"
+#include "PhysicsEngine/RadialForceComponent.h"
+
 UNREALCLR_API DECLARE_LOG_CATEGORY_EXTERN(LogUnrealManaged, Log, All);
 
 namespace UnrealCLRFramework {

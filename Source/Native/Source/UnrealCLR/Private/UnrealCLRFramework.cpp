@@ -23,6 +23,8 @@
 
 #include "UnrealCLRFramework.h"
 
+#include "UnrealCLR.h"
+
 DEFINE_LOG_CATEGORY(LogUnrealManaged);
 
 namespace UnrealCLRFramework {
@@ -384,38 +386,19 @@ namespace UnrealCLRFramework {
 	#define UNREALCLR_COLOR_TO_INTEGER(Color) (Color.A << 24) + (Color.R << 16) + (Color.G << 8) + Color.B
 
 	#if ENGINE_MAJOR_VERSION == 4
-		#define UNREALCLR_CONTROLLER_HAND 17
-		#define UNREALCLR_BOUNDS_SIZE 28
-
-		#if ENGINE_MINOR_VERSION <= 26
-			#define UNREALCLR_BLEND_TYPE 5
-		#elif ENGINE_MINOR_VERSION >= 27
-			#define UNREALCLR_BLEND_TYPE 6
-		#endif
-
-		#if ENGINE_MINOR_VERSION <= 25
-			#define UNREALCLR_PIXEL_FORMAT 71
-		#elif ENGINE_MINOR_VERSION >= 26
-			#define UNREALCLR_PIXEL_FORMAT 72
-		#endif
-	#elif ENGINE_MAJOR_VERSION == 5
+		#error "Not supported for Unreal Engine 4. Please use Unreal Engine 5."
+	#else
 		#define UNREALCLR_BLEND_TYPE 6
-		#define UNREALCLR_PIXEL_FORMAT 85
 		#define UNREALCLR_CONTROLLER_HAND 18
 
 		// Large World Coordinates changed float sphere radius to double but this will be refactored to double in UE5 stable release. 
 		// Currently this is aliased to FLargeWorldCoordinatesReal. Check Engine\Source\Runtime\CoreUObject\Public\UObject\NoExportTypes.h for FVector where it explains.
 		#define UNREALCLR_BOUNDS_SIZE 56	
 
-		#ifdef BRANCH_NAME
-			// There may be a better way to get this information
-			#ifdef BRANCH_NAME == "++UE5+Release-5.0-EarlyAccess"
-				#define UNREALCLR_PIXEL_FORMAT 72
-			#else 
-				#define UNREALCLR_PIXEL_FORMAT 85
-			#endif
-		#else
+		#if ENGINE_MINOR_VERSION == 0
 			#define UNREALCLR_PIXEL_FORMAT 85
+		#else
+			#define UNREALCLR_PIXEL_FORMAT 86
 		#endif
 
 	#endif

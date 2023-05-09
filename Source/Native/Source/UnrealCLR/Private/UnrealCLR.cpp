@@ -23,6 +23,8 @@
 
 #include "UnrealCLR.h"
 
+#include "UnrealCLRFramework.h"
+
 #define LOCTEXT_NAMESPACE "UnrealCLR"
 
 DEFINE_LOG_CATEGORY(LogUnrealCLR);
